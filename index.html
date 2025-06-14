@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio personal de Stefany Renteria y Carol Cabreja, Técnico laboral en seguridad y salud en el trabajo.">
+    <meta name="keywords" content="portafolio, seguridad y salud en el trabajo, Stefany Renteria, Carol Cabreja, proyectos, SST, salud ocupacional, prevención de riesgos">
+    <title>Stefany Renteria & Carol Cabreja - Técnico en SST</title>
+
+    <!-- Google Fonts: Montserrat para títulos y Open Sans para cuerpo de texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Variables de Diseño --- */
+        :root {
+            --primary-dark: #0A192F; /* Azul marino oscuro profundo */
+            --secondary-dark: #172A45; /* Azul marino oscuro ligeramente más claro para elementos */
+            --accent-color: #64FFDA; /* Verde azulado vibrante / Aqua para acentos */
+            --light-text: #CCD6F6;   /* Azul grisáceo claro para texto principal */
+            --secondary-light-text: #8892B0; /* Azul grisáceo más oscuro para texto secundario/párrafos */
+            --white: #FFFFFF;
+            --card-background: #1E2D48; /* Fondo para tarjetas y módulos */
+
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+
+            --transition-speed: 0.3s; /* Velocidad global para transiciones suaves */
+            --navbar-height: 70px; /* Altura de la barra de navegación */
+        }
+
+        /* --- Reset Básico y Estilos Globales --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Desplazamiento suave para anclas */
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden; /* Evitar el scroll horizontal */
+            padding-top: var(--navbar-height); /* Espacio para la barra de navegación fija */
+        }
+
+        /* Contenedor principal para centrar el contenido */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 0; /* Padding vertical para secciones */
+        }
+
+        /* Estilos de Tipografía */
+        h1, h2, h3, h4 {
+            font-family: var(--font-primary);
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-align: center; /* Centrar títulos de sección por defecto */
+        }
+
+        h1 { font-size: 3rem; color: var(--white); } /* Título principal Hero */
+        h2 { font-size: 2.5rem; } /* Títulos de sección */
+        h3 { font-size: 1.8rem; } /* Subtítulos */
+        p { margin-bottom: 15px; color: var(--secondary-light-text); text-align: justify;} /* Párrafos */
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+        a:hover {
+            color: var(--light-text);
+            text-decoration: underline;
+        }
+
+        /* Estilos de Botones */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-family: var(--font-primary);
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+            cursor: pointer;
+            border: 2px solid var(--accent-color);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(100, 255, 218, 0.2); /* Sutil sombra de acento */
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(100, 255, 218, 0.2);
+        }
+
+        /* Estilos Generales de Sección */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--secondary-dark); /* Separador sutil */
+        }
+        section:last-of-type {
+            border-bottom: none; /* Última sección sin separador */
+        }
+
+        /* --- Navegación Superior Fija --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.9); /* primary-dark con transparencia */
+            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Sombra sutil en la barra */
+            transition: top 0.3s; /* Transición para ocultar/mostrar si es necesario */
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Padding horizontal para el contenido de la navbar */
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            padding: 5px 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px; /* Espacio entre enlaces */
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            font-family: var(--font-primary);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color var(--transition-speed) ease;
+        }
+        .nav-links a::after { /* Animación de subrayado */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed) ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Botón de menú para móviles (hamburguesa) */
+        .menu-toggle {
+            display: none; /* Oculto por defecto en escritorio */
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+
+        /* --- Sección Hero (Inicio) --- */
+        #hero {
+            height: calc(100vh - var(--navbar-height)); /* Ocupa el resto de la pantalla */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), /* Superposición oscura */
+                        url('https://placehold.co/1920x1080/0A192F/172A45?text=Fondo+Seguridad+Laboral') no-repeat center center/cover; /* Imagen de fondo */
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3); /* Sombra interna sutil */
+        }
+
+        #hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            max-width: 800px;
+            line-height: 1.2;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Sombra de texto para legibilidad */
+        }
+
+        #hero .hero-name {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-family: var(--font-primary);
+            font-weight: 700;
+        }
+
+        #hero .hero-role {
+            font-size: 1.4rem;
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-family: var(--font-secondary);
+        }
+
+        #hero .hero-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: var(--secondary-light-text);
+        }
+
+        #hero .hero-buttons {
+            display: flex;
+            gap: 20px; /* Espacio entre botones */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- Sección Acerca de Mí --- */
+        #about .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+        }
+
+        #about .about-image {
+            flex: 1 1 300px; /* Crece y se encoge, con base de 300px */
+            text-align: center;
+            padding: 20px;
+        }
+
+        #about .about-image img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px; /* Esquinas redondeadas */
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+            transition: transform var(--transition-speed) ease;
+        }
+        #about .about-image img:hover {
+            transform: scale(1.02); /* Pequeño zoom en hover */
+        }
+
+        #about .about-content {
+            flex: 2 1 400px; /* Ocupa más espacio que la imagen */
+            text-align: left;
+        }
+        #about .about-content h2 {
+            text-align: left; /* Alineación del título "Sobre Mí" */
+        }
+
+        /* --- Sección Habilidades --- */
+        #skills .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        #skills .skill-category {
+            background-color: var(--secondary-dark);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+        #skills .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        #skills .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.3); /* Línea más suave */
+            padding-bottom: 10px;
+            text-align: left; /* Alineación del subtítulo de categoría */
+        }
+
+        #skills ul {
+            list-style: none;
+        }
+
+        #skills li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--light-text);
+            font-size: 1.05rem;
+        }
+        #skills li::before {
+            content: '▹'; /* Icono de viñeta personalizado */
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        
+        /* Barras de progreso */
+        .progress-bar-container {
+            width: 100%;
+            background-color: var(--primary-dark);
+            border-radius: 5px;
+            margin-top: 8px;
+            height: 12px;
+            overflow: hidden; /* Asegura que la barra de progreso no se desborde */
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+            text-align: center; /* Alineación del porcentaje si se añade */
+            line-height: 12px;
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: width 1s ease-out; /* Animación de la barra */
+        }
+
+
+        /* --- Secciones de Experiencia y Educación (Timeline) --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 10px; /* Padding horizontal para evitar que pegue en móvil */
+        }
+        .timeline::after { /* La línea central de la timeline */
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            z-index: 0; /* Detrás de los items */
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 30px; /* Espacio entre items */
+        }
+        /* Círculo en la línea del tiempo */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-color: var(--primary-dark);
+            border: 4px solid var(--accent-color);
+            top: 25px; /* Ajustar para alinear con el contenido */
+            border-radius: 50%;
+            z-index: 1; /* Por encima de la línea */
+            box-shadow: 0 0 0 3px var(--primary-dark); /* Anillo para que el círculo destaque */
+        }
+
+        /* Items a la izquierda de la línea */
+        .timeline-item.left {
+            left: 0;
+            padding-right: 60px; /* Espacio para la flecha y el círculo */
+        }
+        .timeline-item.left::after {
+            right: -9px; /* Centrar el círculo en la línea */
+        }
+        /* Items a la derecha de la línea */
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 60px; /* Espacio para la flecha y el círculo */
+        }
+        .timeline-item.right::after {
+            left: -9px; /* Centrar el círculo en la línea */
+        }
+
+        /* Flechas para los items (simuladas con bordes) */
+        .timeline-item.left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 30px;
+            width: 0;
+            z-index: 1;
+            right: 30px; /* Posición de la flecha */
+            border: medium solid var(--secondary-dark);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--secondary-dark);
+        }
+        .timeline-item.right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 30px;
+            width: 0;
+            z-index: 1;
+            left: 30px; /* Posición de la flecha */
+            border: medium solid var(--secondary-dark);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--secondary-dark) transparent transparent;
+        }
+
+        .timeline-content {
+            padding: 25px 30px;
+            background-color: var(--secondary-dark);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .timeline-content h3 {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-align: left; /* Alineación de cargo/título */
+        }
+        .timeline-content .date {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: block; /* Para que ocupe su propia línea */
+        }
+        .timeline-content p {
+            color: var(--secondary-light-text);
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .timeline-content ul {
+            list-style-type: disc; /* Viñetas visibles */
+            margin-left: 20px;
+            color: var(--secondary-light-text);
+            padding-left: 0;
+        }
+        .timeline-content ul li {
+            margin-bottom: 5px;
+        }
+
+
+        /* --- Sección Proyectos Destacados --- */
+        /* Esta sección será eliminada, pero sus estilos base se mantienen si hay proyectos individuales */
+        #portfolio .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-8px); /* Elevación más notoria */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px; /* Altura fija para las imágenes de proyecto */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio */
+            transition: transform var(--transition-speed) ease;
+        }
+        .project-card:hover img {
+            transform: scale(1.05); /* Pequeño zoom en la imagen al hacer hover en la tarjeta */
+        }
+
+        .project-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .project-card-content p {
+            color: var(--secondary-light-text);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+        .project-card-content .project-tech {
+            font-size: 0.9rem;
+            color: var(--light-text); /* Color más visible para tecnologías */
+            margin-bottom: 20px;
+            font-style: italic;
+            font-weight: 500;
+        }
+        .project-card-content .project-links {
+            margin-top: auto; /* Empuja los botones al final de la tarjeta */
+            display: flex;
+            flex-wrap: wrap; /* Permite que los botones se envuelvan */
+            gap: 10px;
+        }
+        .project-card-content .btn {
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            flex-grow: 1; /* Permite que los botones ocupen el espacio disponible */
+            min-width: 120px; /* Ancho mínimo para botones */
+        }
+
+        /* --- Sección Contacto --- */
+        #contact .container {
+            display: flex;
+            gap: 60px; /* Más espacio entre info y formulario */
+            align-items: flex-start;
+            flex-wrap: wrap; /* Responsividad */
+        }
+        #contact .contact-info {
+            flex: 1 1 350px; /* Base de 350px, crece y encoge */
+            text-align: left;
+        }
+        #contact .contact-form-container {
+            flex: 2 1 450px; /* Base de 450px, más grande */
+        }
+
+        #contact .contact-info h2 {
+            text-align: left;
+        }
+        #contact .contact-info p {
+            margin-bottom: 15px;
+            color: var(--secondary-light-text);
+        }
+        #contact .contact-info p strong {
+            color: var(--light-text);
+            font-weight: 600;
+        }
+        #contact .contact-info .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        #contact .contact-info .social-links a {
+            font-size: 1.8rem; /* Tamaño de iconos sociales más grande */
+            color: var(--accent-color);
+            transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+        #contact .contact-info .social-links a:hover {
+            color: var(--light-text);
+            transform: translateY(-3px);
+        }
+
+        /* Estilos del formulario */
+        .contact-form .form-group {
+            margin-bottom: 25px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light-text);
+            font-family: var(--font-primary);
+            font-weight: 500;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--secondary-light-text);
+            background-color: var(--secondary-dark);
+            color: var(--light-text);
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(100, 255, 218, 0.5);
+        }
+        .contact-form textarea {
+            min-height: 150px; /* Altura mínima para textarea */
+            resize: vertical;
+        }
+        .contact-form .btn-primary {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--secondary-dark);
+            color: var(--secondary-light-text);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--primary-dark);
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        footer p a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* --- Animaciones Sutiles (Fade-in al hacer scroll) --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px); /* Empieza un poco más abajo */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition-delay: 0.2s; /* Pequeño retraso */
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* --- Media Queries para Responsividad --- */
+        @media (max-width: 992px) { /* Tablets y laptops pequeñas */
+            h1 { font-size: 2.5rem; }
+            #hero h1 { font-size: 2.2rem; }
+            h2 { font-size: 2rem; }
+
+            .container { padding: 40px 0; } /* Ajuste de padding en tablet */
+
+            /* Timeline */
+            .timeline::after { left: 31px; } /* Mueve la línea al lado izquierdo */
+            .timeline-item {
+                width: 100%; /* Items ocupan todo el ancho */
+                padding-left: 70px; /* Espacio para el círculo y flecha */
+                padding-right: 25px;
+            }
+            .timeline-item.left::before, .timeline-item.right::before {
+                left: 60px; /* Posición de la flecha */
+                border-width: 10px 10px 10px 0; /* Flecha apunta a la izquierda */
+                border-color: transparent var(--secondary-dark) transparent transparent;
+            }
+            .timeline-item.left::after, .timeline-item.right::after {
+                left: 23px; /* Centra el círculo en la nueva línea */
+            }
+            .timeline-item.right { left: 0%; } /* Mueve todos los items a la izquierda */
+            
+            /* Contacto */
+            #contact .contact-info, #contact .contact-form-container {
+                flex-basis: 100%; /* Cada elemento ocupa todo el ancho */
+                text-align: center;
+            }
+            #contact .contact-info h2 {
+                text-align: center;
+            }
+            #contact .contact-info .social-links {
+                justify-content: center; /* Centrar enlaces sociales */
+            }
+        }
+
+        @media (max-width: 768px) { /* Móviles grandes */
+            body {
+                padding-top: var(--navbar-height); /* Ajuste de padding top para móvil */
+            }
+            h1 { font-size: 2.2rem; }
+            #hero h1 { font-size: 1.8rem; }
+            #hero .hero-name { font-size: 1.6rem; }
+            #hero .hero-role { font-size: 1.1rem; }
+            h2 { font-size: 1.8rem; }
+
+            /* Navegación móvil */
+            .menu-toggle { display: block; } /* Muestra el botón de hamburguesa */
+            .nav-links {
+                display: none; /* Oculta los enlaces por defecto */
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: var(--navbar-height); /* Debajo de la navbar */
+                left: 0;
+                background-color: var(--primary-dark);
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+                transition: transform 0.3s ease-out;
+                transform: translateY(-100%); /* Oculto arriba */
+            }
+            .nav-links.active {
+                display: flex; /* Muestra los enlaces al activarse */
+                transform: translateY(0); /* Desliza hacia abajo */
+            }
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .nav-links a::after {
+                left: 50%;
+                transform: translateX(-50%); /* Centrar subrayado en móvil */
+            }
+
+            #hero .hero-buttons {
+                flex-direction: column; /* Botones apilados en móvil */
+                gap: 15px;
+            }
+            #hero .hero-buttons .btn {
+                width: 80%; /* Ancho de botones en móvil */
+            }
+
+            #about .about-content h2 {
+                text-align: center; /* Centrar título "Sobre Mí" en móvil */
+            }
+        }
+
+        @media (max-width: 480px) { /* Móviles pequeños */
+            h1 { font-size: 1.8rem; }
+            #hero h1 { font-size: 1.5rem; }
+            #hero .hero-name { font-size: 1.4rem; }
+            #hero .hero-role { font-size: 0.9rem; }
+            #hero .hero-description { font-size: 0.9rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.4rem; }
+
+            .container { padding: 30px 0; } /* Más ajuste de padding */
+
+            .btn { padding: 10px 20px; font-size: 0.9rem; }
+
+            .timeline-item { padding-left: 50px; padding-right: 15px; }
+            .timeline-item.left::before, .timeline-item.right::before { left: 40px; }
+            .timeline-item.left::after, .timeline-item.right::after { left: 18px; width: 16px; height: 16px; top: 22px; border-width: 3px;}
+            .timeline-content { padding: 18px 25px; }
+            .timeline-content h3 { font-size: 1.3rem; }
+            .timeline-content .date { font-size: 0.85rem; }
+            .timeline-content p { font-size: 0.9rem; }
+
+            .project-card-content .btn {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="nav-logo">S. Renteria & C. Cabreja</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                &#9776; <!-- Icono de hamburguesa Unicode -->
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="active">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#education">Educación</a></li>
+                <li><a href="#portfolio">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <h1>Protejo la vida en el trabajo promoviendo una cultura de prevención, compromiso y bienestar laboral</h1>
+        <p class="hero-name">Stefany Renteria y Carol Cabreja</p>
+        <p class="hero-role">Técnico laboral en seguridad y salud en el trabajo</p>
+        <p class="hero-description">
+            Prevengo accidentes, reduzco riesgos y fortalezco la cultura de seguridad para proteger la vida y mejorar la productividad.
+        </p>
+        <div class="hero-buttons">
+            <a href="#portfolio" class="btn btn-primary">Ver Mis Proyectos</a>
+            <a href="#" class="btn btn-secondary" download>Descargar CV</a>
+        </div>
+    </section>
+
+    <section id="about" class="fade-in">
+        <div class="container">
+            <div class="about-image">
+                <img src="image_faec32.jpg" alt="Foto profesional de una persona en un entorno industrial con equipo de seguridad">
+            </div>
+            <div class="about-content">
+                <h2>Sobre Mí</h2>
+                <p>
+                    Mi trabajo en seguridad ocupacional refleja mi compromiso con el bienestar laboral, me
+                    motiva prevenir riesgos, capacitar y mejorar entornos de trabajo.
+                </p>
+                <p>
+                    Soy analítica, responsable y disfruto aportar soluciones que cuidan la vida y fortalecen la
+                    cultura de seguridad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <div class="container">
+            <h2>Mis Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Habilidades Técnicas (Ejemplos)</h3>
+                    <ul>
+                        <li>Identificación de Peligros (Avanzado)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                        </li>
+                        <li>Evaluación de Riesgos (Avanzado)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                        </li>
+                        <li>Legislación SST (Intermedio)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 75%;"></div></div>
+                        </li>
+                        <li>Investigación de Accidentes (Intermedio)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                        </li>
+                        <li>Planes de Emergencia (Avanzado)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
+                        </li>
+                        <li>Capacitación en SST (Avanzado)
+                             <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Herramientas</h3>
+                    <ul>
+                        <li>Microsoft Excel
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                        </li>
+                        <li>Power Point
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                        </li>
+                        <li>Microsoft Word
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                        </li>
+                        <li>AutoCAD (Básico)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 50%;"></div></div>
+                        </li>
+                        <li>SG-SST (Software de Gestión)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
+                        </li>
+                        <li>SIMA/ARL
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 75%;"></div></div>
+                        </li>
+                        <li>Canva
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                        </li>
+                        <li>Power BI (Básico)
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 60%;"></div></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Habilidades Blandas</h3>
+                    <ul>
+                        <li>Comunicación efectiva</li>
+                        <li>Empatía</li>
+                        <li>Liderazgo</li>
+                        <li>Resolución de problemas</li>
+                        <li>Pensamiento crítico</li>
+                        <li>Trabajo en equipo</li>
+                        <li>Adaptabilidad</li>
+                        <li>Organización y planificación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+        <div class="container">
+            <h2>Experiencia Laboral</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Inspector de Seguridad y Salud en el trabajo</h3>
+                        <p class="date">Colgate Palmolive | 12/2024 – 05/2025 (Previsto)</p>
+                        <p>
+                            El Inspector de Seguridad y Salud en el Trabajo se encarga de supervisar que se cumplan las normas de prevención de riesgos laborales en los centros de trabajo. Realiza inspecciones, verifica el uso adecuado de equipos de protección, investiga accidentes, elabora informes técnicos, capacita al personal y asesora en la mejora de condiciones laborales. Además, asegura la correcta implementación del sistema de gestión de seguridad y salud en el trabajo y puede proponer sanciones en caso de incumplimientos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="fade-in">
+        <div class="container">
+            <h2>Formación Académica</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Técnico Laboral en Seguridad y Salud en el Trabajo</h3>
+                        <p class="date">Instituto Politécnico Superior de Occidente | 10/01/2023 – 15/06/2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="fade-in">
+        <div class="container">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/172A45/64FFDA?text=Proyecto+VR+SST" alt="Imagen del Proyecto VR SST">
+                    <div class="project-card-content">
+                        <h3>VR SST</h3>
+                        <p>
+                            Plataforma web para gestionar Sistemas de Gestión de Seguridad y Salud en el Trabajo (SG-SST), cumpliendo normativa y facilitando control de actividades, riesgos y documentación. Mi rol: Líder de desarrollo backend y analista funcional.
+                        </p>
+                        <p>
+                            Funcionalidades: Registro/seguimiento de incidentes, módulo de inspecciones, agenda de capacitaciones, informes automáticos, gestión documental, panel KPI.
+                        </p>
+                        <p class="project-tech"><strong>Tecnologías:</strong> [Especificar tecnologías, ej: Python (Django/Flask), React, PostgreSQL, Docker]</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
+                            <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Hablemos</h2>
+                <p>
+                    Estoy siempre abierta a discutir nuevos proyectos, ideas creativas o
+                    oportunidades para ser parte de tus visiones. No dudes en contactarme.
+                </p>
+                <p><strong>Email:</strong> <a href="mailto:Bp_lorenstefany_renteriaobregon@colpal.com">Bp_lorenstefany_renteriaobregon@colpal.com</a></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/jobs/?originalSubdomain=co" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        LIn
+                    </a>
+                    <a href="https://github.com/Stefanyhhhhs/PortafolioWeb" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        GH
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto (Opcional):</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Stefany Renteria & Carol Cabreja. Todos los derechos reservados. Diseñado con ❤️ para la seguridad laboral.</p>
+            <p>Hecho por <a href="https://www.linkedin.com/in/stefany-renteria-obregon-a1b2c3d4e/" target="_blank" rel="noopener noreferrer">Stefany Renteria</a> y <a href="#" target="_blank" rel="noopener noreferrer">Carol Cabreja</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para el desplazamiento suave (Smooth Scrolling) y manejo de la barra de navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            // Manejo de enlaces de navegación con desplazamiento suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); // Previene el comportamiento por defecto del enlace
+
+                    const href = this.getAttribute('href');
+
+                    // Solo intentar scrollIntoView si el href no es solo '#'
+                    if (href && href !== '#') {
+                        document.querySelector(href).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    // Cierra el menú en dispositivos móviles después de hacer clic en un enlace
+                    const navLinks = document.getElementById('nav-links');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // Toggle del menú de navegación para dispositivos móviles (icono de hamburguesa)
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Activar el enlace de navegación correspondiente a la sección visible al hacer scroll
+            const sections = document.querySelectorAll('section');
+            const navLi = document.querySelectorAll('.nav-links li a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    // Obtiene la posición superior de la sección y su altura
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+
+                    // Determina si la sección actual está visible en el viewport
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Remueve la clase 'active' de todos los enlaces y la añade al enlace de la sección actual
+                navLi.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href').includes(current)) {
+                        a.classList.add('active');
+                    }
+                });
+            });
+
+            // Animación Fade-in para elementos al hacer scroll
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.1, // El elemento se considera visible cuando el 10% de su contenido entra en el viewport
+                rootMargin: "0px 0px -50px 0px" // Inicia la animación 50px antes de que el elemento llegue al final del viewport
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return; // Si no está intersectando, no hace nada
+                    } else {
+                        entry.target.classList.add('visible'); // Añade la clase 'visible' para activar la animación
+                        appearOnScroll.unobserve(entry.target); // Deja de observar el elemento una vez que se ha hecho visible
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader); // Comienza a observar cada elemento con la clase 'fade-in'
+            });
+
+            // Manejo de imágenes placeholder para asegurarse de que usan las URLs y alts originales
+            document.addEventListener('DOMContentLoaded', function() {
+                const images = document.querySelectorAll('img'); // Selecciona todas las imágenes
+
+                images.forEach(img => {
+                    // Mapeo manual para restaurar src y alt a los valores originales proporcionados por el usuario
+                    if (img.alt === "Foto profesional de una persona en un entorno industrial con equipo de seguridad") {
+                        img.src = "image_faec32.jpg";
+                    } else if (img.alt === "Imagen del Proyecto VR SST") {
+                        img.src = "https://placehold.co/600x400/172A45/64FFDA?text=Proyecto+VR+SST";
+                    } else if (img.alt === "Fondo Seguridad Laboral") {
+                         img.src = "https://placehold.co/1920x1080/0A192F/172A45?text=Fondo+Seguridad+Laboral";
+                    }
+                    // No se necesita `onerror` aquí ya que estamos restableciendo los `src` que el usuario ya definió.
+                });
+            });
+        });
+    </script>
+</body>
+</html>
